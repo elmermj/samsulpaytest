@@ -1,0 +1,195 @@
+.parent-card{
+    min-height: 24vh;
+    height: fit-content;
+    /* max-height: 72vh; */
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 32vw;
+    border-radius: 1vw;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    opacity: 0;
+    transition: 1.5s ease-in-out;
+    flex: 1;
+    border: 1px solid;
+    border-color: rgba(201, 201, 201, 0.576);
+    /* overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none; */
+}
+.parent-card::-webkit-scrollbar { 
+    display: none; 
+}
+
+.parent-card-title{
+    position: relative;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+    height: 5vh;
+    width: 95%;
+    background-color: rgb(255, 255, 255);
+    font-size: 2.5vh;
+    text-align: center;
+    border-bottom: 1px solid;
+    border-color: #d4d1d1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cards-container{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    justify-content: center;
+    height: 16vh;
+    width: 95%;
+    background-color: rgb(237, 239, 247);
+    border-radius: 1vw;
+    transition: 0.4s ease-out;
+}
+
+#add-cards-mobile{
+    visibility: hidden;
+}
+
+/* .cards-container-mobile{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    justify-content: center;
+    height: 16vh;
+    width: 95%;
+    background-color: rgb(237, 239, 247);
+    border-radius: 1vw;
+    transition: 0.4s ease-out;
+} */
+
+/* .occupied{
+    background: linear-gradient(59deg, rgba(0,147,255,1) 0%, rgba(41,115,198,1) 0%, rgba(0,254,255,1) 100%);
+    transition: 1s ease-in-out;
+    z-index: 11;
+}
+
+.occupied::before{
+    background: linear-gradient(22deg, rgba(0,147,255,1) 0%, rgba(41,115,198,1) 0%, rgba(0,254,255,1) 37%);
+    opacity: 0;
+    transition: 1s ease-in-out;
+    z-index: 9;
+}
+
+.occupied:hover::before{
+    background: linear-gradient(22deg, rgba(0,147,255,1) 0%, rgba(41,115,198,1) 0%, rgba(0,254,255,1) 37%);
+    opacity: 1;
+} */
+
+.occupied {
+    position: relative;
+    z-index: 1; /* matters! */
+    background: linear-gradient(59deg, rgba(0,147,255,1) 0%, rgba(41,115,198,1) 0%, rgba(0,254,255,1) 100%);
+}
+.occupied::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1vw;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(49deg, rgba(3,110,255,1) 0%, rgba(60,188,255,1) 15%, rgba(127,246,255,1) 45%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: -1;
+}
+.occupied:hover::before {
+    opacity: 1;
+}
+
+.brand-name-located{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.brand-name-located-ccdc{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.card-part-1{
+    flex: 2;
+}
+
+.card-part-2{
+    flex: 1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-space{
+    margin: 1em;
+    text-align: start;
+    color: white;
+}
+
+.balance{
+    margin-left: 1em;
+    margin-bottom: 1em;
+    text-align: start;
+    color: white;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+.card-issuer-icon{
+    max-width: 8em;
+    max-height: 4em;
+    position: absolute;
+    z-index: 1;
+}
+
+.card-issuer-icon-container{
+    width: 9em;
+    height: 4.5em;
+    border-radius: 1vw;
+    background-color: transparent;
+    transition: 0.5s;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.card-issuer-icon-container:hover{
+    width: 9em;
+    height: 4.5em;
+    border-radius: 1vw;
+    background-color: black;
+    opacity: 0.6;
+    transition: 0.5s;
+    margin-right: 1em;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+#add-cards:hover{
+    background-color: black;
+    transition: 0.4s ease-out;
+}
+
+.card-symbol-spinning{
+    transition: 1s;
+    margin: 2vh;
+}
+
+.active{
+    background-color: black;
+    color: white;
+}
+

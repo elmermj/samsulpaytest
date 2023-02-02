@@ -1,0 +1,10 @@
+.welcome{
+    text-align: start; padding-left: -15vw; line-height: 6vh; font-size: 5vh; transition: 2.5s ease-out; opacity: 0;margin: 0;
+}
+.profileName{
+    text-align: end; transition: 2.5s ease-out; opacity: 0;padding-right: -15vw;margin:0;line-height: 8vh;font-size: 7vh;
+}
+h1{
+    white-space: nowrap;
+    overflow: hidden;
+}

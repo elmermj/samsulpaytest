@@ -1,0 +1,160 @@
+.mobile-menu{
+    visibility: hidden;
+}
+.menu {
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    /* background-color: black;
+    opacity: 0; */
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: none;
+    position: fixed;
+    margin-left: 0;
+    margin-bottom: 0;
+    bottom: 0;
+    padding-left: 2vw;
+    z-index: 100;
+    height: 10vh;
+    width: fit-content;
+    transition: 1s;
+    border-top-right-radius: 1em;
+}
+
+.menu:hover {
+    pointer-events: all;
+    color: white;
+    background-color: black;
+    opacity: 1;
+}
+
+.label {
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.spacer {
+    display: inline-block;
+    width: 80px;
+    margin-left: 15px;
+    margin-right: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+}
+
+.spacer:before {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #ffffff;
+    height: 1px;
+    width: 0%;
+    transition: width 0.25s ease;
+    transition-delay: 0.7s;
+}
+
+.item {
+    font-size: 1em;
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    /* top: 10px; */
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+    transition-delay: 0;
+}
+
+#home-btn{
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+}
+
+#home-btn:hover{
+    cursor: pointer;
+    color: rgb(74, 219, 255);
+    transition: 0.5s;
+}
+#payments-btn{
+    cursor: pointer;
+    color: white;
+    transition: 0.2s;
+}
+#payments-btn:hover{
+    cursor: pointer;
+    color: rgb(74, 219, 255);
+    transition: 0.5s;
+}
+
+span {
+    transition: color 0.5s ease;
+}
+.menu:hover .spacer:before {
+    width: 100%;
+    transition-delay: 0s;
+}
+.menu:hover .item {
+    opacity: 1;
+    top: 0px;
+}
+.item:nth-child(1) {
+    transition-delay: 0.45s;
+}
+.item:nth-child(2) {
+    transition-delay: 0.4s;
+}
+.item:nth-child(3) {
+    transition-delay: 0.35s;
+}
+.item:nth-child(4) {
+    transition-delay: 0.3s;
+}
+.item:nth-child(5) {
+    transition-delay: 0.25s;
+}
+.item:nth-child(6) {
+    transition-delay: 0.2s;
+}
+.item:nth-child(7) {
+    transition-delay: 0.15s;
+}
+.item:nth-child(8) {
+    transition-delay: 0.1s;
+}
+.item:nth-child(9) {
+    transition-delay: 0.05s;
+}
+.item:nth-child(10) {
+    transition-delay: 0s;
+}
+.menu:hover .item:nth-child(1) {
+    transition-delay: 0.25s;
+}
+.menu:hover .item:nth-child(2) {
+    transition-delay: 0.3s;
+}
+.menu:hover .item:nth-child(3) {
+    transition-delay: 0.35s;
+}
+.menu:hover .item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+.menu:hover .item:nth-child(5) {
+    transition-delay: 0.45s;
+}
+.menu:hover .item:nth-child(6) {
+    transition-delay: 0.5s;
+}
+.menu:hover .item:nth-child(7) {
+    transition-delay: 0.55s;
+}
+.menu:hover .item:nth-child(8) {
+    transition-delay: 0.6s;
+}
+.menu:hover .item:nth-child(9) {
+    transition-delay: 0.65s;
+}
+.menu:hover .item:nth-child(10) {
+    transition-delay: 0.7s;
+}

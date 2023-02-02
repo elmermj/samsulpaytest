@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Samsul Pay</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap\css\bootstrap.css">
+        <link rel="stylesheet" href="css\style.css">
+        <link rel="stylesheet" href="css\positioning.css">
+        <link rel="stylesheet" href="css\sizing.css">
+        <link rel="stylesheet" href="css\responsive.css">
+        <link rel="stylesheet" href="components\get-started-slide\get-started-slide.css">
+        <link rel="stylesheet" href="components\slideshow\slideshow.css">
+        <link rel="stylesheet" href="components\footer\footer.css">
+        <link rel="stylesheet" href="css\responsive.css">
+        <link rel = "icon" href = "assets\images\icon.png" type = "image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/9.16.0/firebase-app-compat.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/9.16.0/firebase-auth-compat.js"></script>
+        <script defer src="/__/firebase/9.16.0/firebase-database-compat.js"></script>
+        <script defer src="/__/firebase/9.16.0/firebase-firestore-compat.js"></script>
+        <script defer src="/__/firebase/9.16.0/firebase-functions-compat.js"></script>
+        <script defer src="/__/firebase/9.16.0/firebase-messaging-compat.js"></script>
+        <script defer src="/__/firebase/9.16.0/firebase-storage-compat.js"></script>
+        <script defer src="/__/firebase/9.16.0/firebase-analytics-compat.js"></script>
+        <script defer src="/__/firebase/9.16.0/firebase-remote-config-compat.js"></script>
+        <script defer src="/__/firebase/9.16.0/firebase-performance-compat.js"></script>
+        <!-- 
+          initialize the SDK after all desired features are loaded, set useEmulator to false
+          to avoid connecting the SDK to running emulators.
+        -->
+        <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    </head>
+    <body class="scrollbar-less">
+        <div class="top-bar">            
+            <img src="assets\images\Samsul_Pay_Logo.svg.png" class="top-bar-img">
+        </div>
+        <div class="body-container">
+            <div class="motto" id="motto">
+                <h1 class="motto-text">
+                    A New Simpler Platform To Use Your e-Wallets And e-Vouchers
+                </h1>
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade" style="text-align: center;">
+                    <img src="assets\images\slideshow\app.png" style="width:inherit; vertical-align:middle; max-height: 40vh;">
+                </div>
+            
+                <div class="mySlides fade" style="text-align: center;">
+                    <img src="assets\images\slideshow\samsulpayment.png" style="width:inherit; vertical-align:middle; max-height: 40vh;">
+                </div>
+            
+                <div class="mySlides fade" style="text-align: center;">
+                    <img src="assets\images\slideshow\phonesamsulpay.png" style="width:inherit; vertical-align:middle; max-height: 40vh;">
+                </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+        </div>
+        <div class="body-container-2" id="myHeader">
+            <div class="main-get-started-container">
+                <div class="left-part-container">
+                    <div class="logo-text" id="leftHeader"><img src="assets\images\Samsul_Pay_Logo.svg.png" style="max-height: inherit; object-fit: contain;"></div>
+                    <div id="get-started-button1" style="visibility: visible;">
+                        <a class="get-started-button1" href="#start"> Get Started </a>                  
+                    </div>
+                    <div id="get-started-button2" style="visibility: hidden;">
+                        <a style="cursor: pointer;" class="get-started-button2"> Cancel </a>
+                    </div>
+                </div>
+                <div id="right-part-container">
+                    <div class="slideout-title">
+                        Feel free to try our platform to ease your daily financial transactions.
+                    </div>
+                    <div class="slideout-contents" id="reversible">
+                        <div id="register-button">
+                            <a style="cursor: pointer;"> Register Your Account </a>                    
+                        </div>
+                        <div id="login-button">
+                            <a style="cursor: pointer;"> Login to Your Account </a>                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="start">
+                <div class="black-bar">
+                    <div class="black-bar-progress" id="black-bar-progress">
+                        <a href="#anchor-1" class="section-nav-item">
+                            <img src="assets\images\icons\e-wallet.svg" style="width: 4vh; height: 4vh; margin: 4px;">
+                            <div class="section-nav-text">
+                                Convenience
+                            </div>                   
+                        </a>
+                        <a href="#anchor-2" class="section-nav-item">
+                            <img src="assets\images\icons\practicality.svg" style="width: 4vh; height: 4vh; margin: 4px;">
+                            <div class="section-nav-text">
+                                Practicality
+                            </div>
+                        </a> 
+                        <a href="#anchor-3" class="section-nav-item">
+                            <img src="assets\images\icons\payment-gateway-icon.svg" style="width: 4vh; height: 4vh; margin: 4px;">
+                            <div class="section-nav-text">
+                                Manage Your Payments
+                            </div>                   
+                        </a>
+                    </div>            
+                    <form class="form" id="registration-form">
+                        <div class="form-item">
+                            <label>Personal Name</label>
+                            <input type="personalname" class="form-control" id="personalNameRegister" placeholder="Your Name Here" style="color: white;">
+                        </div>
+                        <div class="form-item">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" id="emailRegister" placeholder="Your Email Here" style="color: white;">
+                        </div>
+                        <div class="form-item">
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="passwordRegister" placeholder="Password" style="color: white;">
+                        </div>
+                        <div class="form-item">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmRegister" placeholder="Confirm Password" style="color: white;">
+                        </div>
+                        <div class="form-item" style="border: none; margin-bottom: 1vh;">
+                            <label id="alertMessageReg"></label>
+                        </div>
+                        <button type="submit" class="submit-btn" id="registerBtn" style="background-color: transparent;">Register Account</button>
+                    </form>
+                    <form class="form" id="login-form">
+                        <div class="form-item">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Your Email Here" style="color: white;">
+                        </div>
+                        <div class="form-item">
+                            <label>Password</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Password" style="color: white;">
+                        </div>
+                        <div class="form-item" style="border: none; margin-bottom: 1vh;">
+                            <label id="alertMessageReg"></label>
+                        </div>
+                        <button type="submit" class="submit-btn" id="loginBtn" style="background-color: transparent;">Login Account</button>
+                    </form>
+                </div>
+            </section>            
+        </div>
+        <section id="anchor-1">
+            <div class="footer-container">
+                <div class="footer-container-title" data-animate-opts="{'type':'text','pcDelay':'700','moDelay':'437.5','pcDuration':'2000','moDuration':'1250'}">
+                    <img src="assets\images\icons\e-wallet.svg" style="width: 5vw; height: 5vw; margin: 5vw;min-width: 45px; min-height: 45px;">
+                    <h1 class="footer-container-title-text">
+                        Conveniently store, use, and manage your e-wallet accounts
+                    </h1>
+                </div>
+                <div class="footer-container-body">
+                    <div class="footer-container-body-text">
+                        <p class="footer-container-body-text-p">
+                            Never miss another chance to use your membership and rewards cards. 
+                            Simply register them on Samsul Pay and have them at the ready wherever you and your devices may go.
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="footer-container-body-text-p-small">
+                            *This picture is merely an illustration.
+                        </p>
+                    </div>
+                    <div class="footer-container-body-png-container">
+                        <img src="assets\images\home screen\sample_pic1-cropped.png" class="footer-container-body-png">
+                    </div>
+                </div>          
+            </div>
+        </section>
+        
+        <section id="anchor-2">
+            <div class="footer-container inverse">
+                <div class="footer-container-title" style="background-color: white; color: black;">
+                    <h1 class="footer-container-title-text">
+                        Be cheap. No more freeloaders.
+                    </h1>
+                    <canvas id="animation-freeloader"style="width=5vw; height=5vw" ></canvas>
+                    <!-- <img src="assets\images\icons\e-wallet inverse.svg" style="width: 5vw; height: 5vw; margin: 5vw;min-width: 45px; min-height: 45px;"> -->
+                </div>
+                <div class="footer-container-body inverse">
+                    <div class="footer-container-body-text">
+                        <p class="footer-container-body-text-p">
+                            There's always one friend with thousands of reasons for not picking up the tab.
+                            Encourage them to use our platform, scan the receipt, check the items they order, and send the bill to them.
+                            <br>
+                            Be cheap. No more freeloaders.
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="footer-container-body-text-p-small">
+                            *This picture is merely an illustration.
+                        </p>
+                    </div>
+                    <div class="footer-container-body-png-container">
+                        <img src="assets\images\home screen\sample_pic1-cropped.png" class="footer-container-body-png">
+                    </div>
+                </div>          
+            </div>
+        </section>
+        
+        <section id="anchor-3">
+            <div class="footer-container">
+                <div class="footer-container-title" data-animate-opts="{'type':'text','pcDelay':'700','moDelay':'437.5','pcDuration':'2000','moDuration':'1250'}">
+                    <img src="assets\images\icons\e-wallet.svg" style="width: 5vw; height: 5vw; margin: 5vw;min-width: 45px; min-height: 45px;">
+                    <h1 class="footer-container-title-text">
+                        Track Your Payments
+                    </h1>
+                </div>
+                <div class="footer-container-body">
+                    <div class="footer-container-body-text">
+                        <p class="footer-container-body-text-p">
+                            Track every payment you've accumulated in a period of time so you won't miss any bill.
+                            You can also do this to that friend who always borrows your money but never returns it.
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="footer-container-body-text-p-small">
+                            *This picture is merely an illustration.
+                        </p>
+                    </div>
+                    <div class="footer-container-body-png-container">
+                        <img src="assets\images\home screen\sample_pic1-cropped.png" class="footer-container-body-png">
+                    </div>
+                </div>          
+            </div>
+        </section>
+        <section id="anchor-4">
+            <div class="footer-container">
+                <h2 class="disclaimer">
+                    DISCLAIMER
+                    <br>
+                    <br>
+                    This website is not intended for commercial purpose. Any resemblance to a fully-functioning product is purely coincidental.
+                    And I ran out of idea what to build. Have a great day. -Elmer
+                </h2>        
+            </div>
+        </section>
+        <script src="bootstrap\js\bootstrap.min.js" async defer></script>
+        <script src="components\slideshow\slideshow.js"></script>
+        <script src="components\get-started-slide\get-started-slide.js"></script>
+        <script type="module">
+            import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js'
+            import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js'
+
+            import {
+                getAuth, 
+                createUserWithEmailAndPassword, 
+                onAuthStateChanged,
+                signInWithEmailAndPassword,
+                signOut
+            } from 'https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js'
+
+            import { 
+                getDatabase, 
+                set, 
+                ref, 
+                update 
+            }from "https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+                apiKey: "AIzaSyDpjs5mJGfD0xC_J18cZbgfyYBBh-ehkhU",
+                authDomain: "samsulpaytest.firebaseapp.com",
+                projectId: "samsulpaytest",
+                storageBucket: "samsulpaytest.appspot.com",
+                messagingSenderId: "651529991268",
+                appId: "1:651529991268:web:c91369997729b6d1059b71",
+                measurementId: "G-6XHZZTVXD3",
+                databaseURL: "https://samsulpaytest-default-rtdb.asia-southeast1.firebasedatabase.app/"
+            };
+
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+
+            const analytics = getAnalytics(app);
+            const database = getDatabase(app);
+            const auth = getAuth(app);
+            let registerBtn = document.getElementById("registerBtn");
+            let loginBtn = document.getElementById("loginBtn");
+            var alertMessage = document.getElementById("alertMessage");
+            var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+            registerBtn.addEventListener("click",(e)=>{
+                let personalName = document.getElementById("personalNameRegister").value;
+                let email = document.getElementById("emailRegister").value;
+                let password = document.getElementById("passwordRegister").value;
+                let confPassword = document.getElementById("confirmRegister").value;
+                const now = new Date();
+                let formattedDate = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()+'  '+months[now.getMonth()]+', '+now.getDate()+' '+now.getFullYear();
+                alertMessage = document.getElementById("alertMessageReg");
+                console.log(personalName+" "+email);
+                if(validateEmail(email)==false){
+                    alertMessage.innerHTML = 'Wrong email format'
+                }
+                else if(validatePassword(password)==false){
+                    alertMessage.innerHTML = 'Password must be at least 8 characters'
+                }
+                else if(confirmPassword(password, confPassword)==false){
+                    alertMessage.innerHTML = 'Passwords are not matched'
+                }
+                else{
+                    createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                            const user = userCredential.user;
+                            set(ref(database, "users/" + user.uid), {
+                                name: personalName,
+                                email: email,
+                                lastLogin: formattedDate.toString()
+                            }).then(()=>{
+                                console.log('User created \n User details:\n'+user.toString());
+                            }).catch((error)=>{alert(error)})
+                            alertMessage.innerHTML = 'Account successfully created';
+                        }
+                    ).catch(
+                        function(error){
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+
+                            alert('Error Code: '+errorCode+' | Error message: '+errorMessage);
+                    })
+                }
+            });
+            loginBtn.addEventListener("click",(e)=>{
+                let emailSignin = document.getElementById("emailInput").value;
+                let passwordSignin = document.getElementById("passwordInput").value;
+                const now = new Date();
+                let formattedDate = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds()+'  '+months[now.getMonth()]+', '+now.getDate()+' '+now.getFullYear();
+                console.log(formattedDate.toString());
+                signInWithEmailAndPassword(auth, emailSignin, passwordSignin)
+                .then((userCredential) => {
+                // Signed in
+                    const user = userCredential.user;
+                    let lastLogin = formattedDate.toString();
+                    update(ref(database, "users/" + user.uid), {
+                        lastLogin: lastLogin
+                    }).then(() => {
+                        // Data saved successfully!
+                        //   alert("user telah sukses login");
+                        location.href = "page/home.html";
+                    })
+                    .catch((error) => {
+                        //the write failed
+                        alert(error);
+                    });
+                }).catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                    alertMessage.innerHTML = 'Wrong email/password';
+                });
+
+                signOut(auth).then(() => {}).catch((error) => {});
+            });
+
+            function validateEmail(email){
+                let expression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(expression.test(email)==true){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            function validatePassword(password){
+                if(password < 8){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+
+            function confirmPassword(password, confPassword){
+                if (password == confPassword){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        </script>
+        <!-- <script type="module" src="index.js"></script> -->
+    </body>
+</html>

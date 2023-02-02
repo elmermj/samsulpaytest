@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home | Samsul Pay</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="..\bootstrap\css\bootstrap.css">
+        <link rel="stylesheet" href="..\css\style.css">
+        <link rel="stylesheet" href="..\css\positioning.css">
+        <link rel="stylesheet" href="..\css\sizing.css">
+        <link rel="stylesheet" href="..\components\get-started-slide\get-started-slide.css">
+        <link rel="stylesheet" href="..\components\slideshow\slideshow.css">
+        <link rel="stylesheet" href="..\components\footer\footer.css">
+        <link rel="stylesheet" href="..\components\homeslide\homeslide.css">
+        <link rel="stylesheet" href="..\components\stacked-cards\stacked-cards.css">
+        <link rel="stylesheet" href="..\components\toggle-switch-nav\toggle-switch-nav.css">
+        <link rel="stylesheet" href="..\css\responsive.css">
+        <link rel = "icon" href = "..\assets\images\icon.png" type = "image/x-icon">
+    </head>
+    <body class="scrollbar-less" style="background-color: rgb(255, 255, 255);">
+        <div class="menu">
+            <div class="label">Navigate Here</div>
+            <div class="spacer"></div>
+            <div class="item"><a style="cursor: pointer;" id="home-btn">E-WALLETS</a></div>
+            <div class="item"><a style="cursor: pointer;" id="payments-btn">PAYMENTS</a></div>
+        </div>
+        <div class="mobile-menu">
+            <div class="nav-item"><a style="cursor: pointer;" id="home-btn-mobile">E-WALLETS</a></div>
+            <div class="nav-item"><a style="cursor: pointer;" id="payments-btn-mobile">PAYMENTS</a></div>
+        </div>
+        <div class="top-bar" style="justify-content: space-between;">            
+            <img src="..\assets\images\Samsul_Pay_Logo.svg.png" class="home-logo">        
+            <button class="get-started-button1 single-flexed" id="logout-button" value="ok">Logout</button>
+        </div>
+        <div class="body-container" style="display: flex;flex-direction: column; height: fit-content;">
+            <!-- <section id="revert"> -->
+                <h1 class="welcome" id="welcome">
+                    Welcome,
+                </h1>
+                <h1 class="profileName" id="profileName" >
+                    Elmer Matthew Japara
+                </h1>
+            <!-- </section>             -->
+        </div>
+        <div class="home-body-container" id="home-body-container">
+            <div class="parent-card" style="z-index: 2;" id="parent-card-1">
+                <div class="parent-card-title">
+                    <label>Your e-Wallets</label>
+                </div>
+                <div class="cards-container occupied brand-name-located pointer">
+                    <p class="brand-space">[e-Wallet Brand 1]</p>
+                    <p class="balance">
+                        Rp. 250.256
+                    </p>
+                </div>
+                <div class="cards-container occupied brand-name-located pointer">
+                    <p class="brand-space">[e-Wallet Brand 2]</p>
+                    <p class="balance">
+                        Rp. 1.050.256
+                    </p>
+                </div>
+                <div class="cards-container occupied brand-name-located-ccdc pointer">
+                    <div class ="card-part-1">
+                        <p class="brand-space">[Debit/Credit Card Issuer 1]</p>
+                        <p class="balance">
+                            XXXX XXXX XXXX 2431
+                        </p>
+                    </div>
+                    <div class ="card-part-2">                   
+                        <img src="..\assets\images\icons\mastercard-svgrepo-com.svg" class="card-issuer-icon">
+                        <div class="card-issuer-icon-container">
+                        </div>
+                    </div>
+                </div>
+                <div class="cards-container occupied brand-name-located-ccdc pointer">
+                    <div class ="card-part-1">
+                        <p class="brand-space">[Debit/Credit Card Issuer 1]</p>
+                        <p class="balance">
+                            XXXX XXXX XXXX 2431
+                        </p>
+                    </div>
+                    <div class ="card-part-2">                   
+                        <img src="..\assets\images\icons\mastercard-svgrepo-com.svg" class="card-issuer-icon">
+                        <div class="card-issuer-icon-container">
+                        </div>
+                    </div>
+                </div>
+                <a class="cards-container" style="cursor: pointer; margin-left: 2.5%;" id="add-cards" href="#revert">
+                    <img src="..\assets\images\icons\plus-icon.svg" id="spinning-plus-icon" class="card-symbol-spinning">
+                </a>
+                
+            </div>
+            <div class="parent-card" style="z-index: 1;" id="parent-card-2">
+                <div class="parent-card-title">
+                    <label id="revert">Add New e-Wallet</label>
+                </div>
+                <div class="cards-container">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="finance-body-container" id="finance-body-container">
+
+        </div>
+        <script src="..\components\homeslide\homeslide.js"></script>
+        <script src="..\components\stacked-cards\stacked-cards.js"></script>
+        <script src="..\components\toggle-switch-nav\toggle-switch-nav.js"></script>
+        <script type="module">
+            import { 
+                getAuth, 
+                signOut, 
+                onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-auth.js";
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+      
+            const firebaseConfig = {
+                apiKey: "AIzaSyDpjs5mJGfD0xC_J18cZbgfyYBBh-ehkhU",
+                authDomain: "samsulpaytest.firebaseapp.com",
+                projectId: "samsulpaytest",
+                storageBucket: "samsulpaytest.appspot.com",
+                messagingSenderId: "651529991268",
+                appId: "1:651529991268:web:c91369997729b6d1059b71",
+                measurementId: "G-6XHZZTVXD3",
+                databaseURL: "https://samsulpaytest-default-rtdb.asia-southeast1.firebasedatabase.app/"
+            };
+      
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+            let logoutButton = document.getElementById("logout-button");
+            console.log(logoutButton);
+      
+            logoutButton.addEventListener("click", (e) => {
+              signOut(auth)
+                .then(() => {
+                  alert("sukses logout");
+                  location.href = "../index.html";
+                })
+                .catch((error) => {});
+            });
+            
+            onAuthStateChanged(auth, (user) => {
+                if(user){
+                    const uuid = user.uid
+                    var docRef = db.collection('users').doc(auth.uuid)
+
+                    docRef.get().then(function({ doc }) {
+                        if (doc.exists) {
+                            console.log("Document data:", doc.data());
+
+                            $('#profileName').append(doc.data);
+
+                        } else {
+                            console.log("No such document!");
+                        }
+                    }).catch(function(error) {
+                    console.log("Error getting document:", error);
+                    })
+                }else{
+
+                }
+            });
+                
+          </script>
+    </body>
+</html>
